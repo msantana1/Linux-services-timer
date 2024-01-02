@@ -1,0 +1,13 @@
+[Unit]
+Description=Pull latest docker image for containers Timer
+
+[Timer]
+#OnBootSec=20min
+#OnUnitActiveSec=1w
+#AccuracySec=1s
+OnCalendar=Tue 2:00:00
+Persistent=true
+Unit=containers-update.service
+
+[Install]
+WantedBy=timers.target

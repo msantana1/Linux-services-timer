@@ -1,0 +1,13 @@
+[Unit]
+Description=Pull latest docker image for containers
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/docker-compose-update.sh
+User=<docker_user>
+
+[Install]
+WantedBy=multi-user.target
+
